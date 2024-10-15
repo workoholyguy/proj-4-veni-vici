@@ -1,35 +1,41 @@
 import React from "react";
 
 const MainDisplay = ({ item, onBan }) => {
-  if (!item) return <div>Click "Discover" to start exploring!</div>;
+  if (!item) {
+    return (
+      <div className="main-display">Click "Discover!" to see a new dog!</div>
+    );
+  }
 
-  const breedInfo =
-    item.breeds && item.breeds.length > 0 ? item.breeds[0] : null;
-  const breedName = breedInfo
-    ? breedInfo.name
-    : "Breed information not available";
-  const origin = breedInfo
-    ? breedInfo.origin
-    : "Origin information not available";
+  const { url, breedInfo } = item;
 
   return (
     <div className="main-display">
-      <h2>{breedName}</h2>
-      <div className="attributes">
-        {breedInfo && (
-          <>
-            <button onClick={() => onBan(breedName)} className="ban-button">
-              Ban {breedName}
-            </button>
-            {origin && (
-              <button onClick={() => onBan(origin)} className="ban-button">
-                Ban {origin}
-              </button>
-            )}
-          </>
-        )}
-      </div>
-      <img src={item.url} alt={breedName} className="item-image" />
+      <img
+        src={url}
+        alt={breedInfo ? breedInfo.name : "Dog Image"}
+        className="dog-image"
+        width={"380px"}
+      />
+
+      {breedInfo ? (
+        <div className="breed-info">
+          <h2>Breed: {breedInfo.name}</h2>
+          <p>
+            <strong>Temperament:</strong> {breedInfo.temperament}
+          </p>
+          <p>
+            <strong>Origin:</strong> {breedInfo.origin}
+          </p>
+
+          {/* Button to add breed to ban list */}
+          <button onClick={() => onBan(breedInfo.name)} className="ban-button">
+            Ban {breedInfo.name}
+          </button>
+        </div>
+      ) : (
+        <p>Unknown Breed</p>
+      )}
     </div>
   );
 };
