@@ -1,0 +1,115 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+}
+
+.main-content {
+  flex: 2;
+  padding: 20px;
+  text-align: center;
+}
+
+.side-content-left {
+  flex: 1;
+  padding: 20px;
+  background-color: #417974;
+  border-right: 2px solid #417c70;
+}
+
+.side-content-right {
+  flex: 1;
+  padding: 20px;
+  background-color: #5b8b59;
+  border-left: 2px solid #548446;
+}
+
+.history-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.history-thumbnail {
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.discover-button {
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.discover-button:hover {
+  background-color: #0056b3;
+}
+
+.item-image {
+  max-width: 80%; /* Ensure image doesn't exceed 80% of its container */
+  max-height: 400px; /* Constrain the height to a maximum value */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: add rounded corners for styling */
+  margin: 20px 0;
+}
+
+.history-thumbnail {
+  max-width: 100px; /* Small thumbnail for the history */
+  max-height: 100px; /* Small thumbnail for the history */
+  border-radius: 5px; /* Optional: add rounded corners for styling */
+}
